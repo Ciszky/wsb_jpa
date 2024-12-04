@@ -43,7 +43,7 @@ INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_n
 
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (7, 'Karin', 'Chakwas', '123897654', 'kchakwas@alliance.com', 'DOC007', 'Ortopedia', 3);
 
-INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (8, 'Józef', 'Czerniec', '32 747 32 75', 'uwiatrak@gmail.com', 'DOC008', 'Kardiologia', 13);
+INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (8, 'Mordin', 'Solus', '741 245 122', 'msolus@omega.com', 'DOC008', 'Kardiologia', 13);
 
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (9, 'Thomas', 'Elliot', '633 141 111', 'telliot@gotham.com', 'DOC009', 'Dermatologia', 15);
 
