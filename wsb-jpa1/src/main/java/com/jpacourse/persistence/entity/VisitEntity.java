@@ -1,9 +1,8 @@
 package com.jpacourse.persistence.entity;
 
 import java.time.LocalDateTime;
-
-import javax.persistence.*;
 import java.util.Collection;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "visit")
@@ -69,6 +68,11 @@ public class VisitEntity {
 	public Collection<MedicalTreatmentEntity> getMedicalTreatments() {
 		return medicalTreatments;
 	}
+
+	public void setMedicalTreatments(Collection<MedicalTreatmentEntity> medicalTreatments) {
+		this.medicalTreatments = medicalTreatments;
+	}
+
 	public void addMedicalTreatment(MedicalTreatmentEntity medicalTreatment) {
 		medicalTreatments.add(medicalTreatment);
 		medicalTreatment.setVisit(this);

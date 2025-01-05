@@ -1,9 +1,8 @@
 package com.jpacourse.persistence.entity;
 
 import java.time.LocalDate;
-
-import javax.persistence.*;
 import java.util.Collection;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "patient")
@@ -34,8 +33,11 @@ public class PatientEntity {
 	@JoinColumn(name = "address_id")
 	private AddressEntity address;
 
-	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "patient", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
 	private Collection<VisitEntity> visits;
+
+	@Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
+	private Boolean isAllergic;
 
 	public Long getId() {
 		return id;
@@ -96,18 +98,36 @@ public class PatientEntity {
 	public AddressEntity getAddress() {
 		return address;
 	}
+
 	public void setAddress(AddressEntity address) {
 		this.address = address;
 	}
+
 	public Collection<VisitEntity> getVisits() {
 		return visits;
 	}
+
+	public void setVisits(Collection<VisitEntity> visits) {
+		this.visits = visits;
+	}
+
 	public void addVisit(VisitEntity visit) {
 		visits.add(visit);
+
 		visit.setPatient(this);
 	}
+
 	public void removeVisit(VisitEntity visit) {
 		visits.remove(visit);
+
 		visit.setPatient(null);
+	}
+
+	public Boolean getIsAllergic() {
+		return isAllergic;
+	}
+
+	public void setIsAllergic(Boolean isAllergic) {
+		this.isAllergic = isAllergic;
 	}
 }

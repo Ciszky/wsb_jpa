@@ -50,15 +50,15 @@ INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_n
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES (10, 'Sherman', 'Cottle', '643 331 111', 'scottle@battlestar.com', 'DOC010', 'Dermatologia', 2);
 
 -- Pacjenci
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id) VALUES (1, 'Jean-Luc', 'Picard', '764 394 364', 'jlpicard@galactic.com', 'PAT001', '1996-05-12', 4);
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (1, 'Jean-Luc', 'Picard', '764 394 364', 'jlpicard@galactic.com', 'PAT001', '1996-05-12', 4, true);
 
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id) VALUES (2, 'Johnny', 'Rico', '32 569 75 88', 'jrico@fednet.com', 'PAT002', '1989-06-07', 6);
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (2, 'Johnny', 'Rico', '32 569 75 88', 'jrico@fednet.com', 'PAT002', '1989-06-07', 6, true);
 
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id) VALUES (3, 'Garrus', 'Vakarian', '533 173 334', 'gvakarian@csoc-mail.com', 'PAT003', '1970-05-22', 5);
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (3, 'Garrus', 'Vakarian', '533 173 334', 'gvakarian@csoc-mail.com', 'PAT003', '1970-05-22', 5, true);
 
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id) VALUES (4, 'John', 'Shepard', '643 111 652', 'jshepard@alliance.com', 'PAT004', '1973-09-15', 10);
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (4, 'John', 'Shepard', '643 111 652', 'jshepard@alliance.com', 'PAT004', '1973-09-15', 10, false);
 
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id) VALUES (5, 'Miranda', 'Lawson', '121 663 215', 'mlawson@cerberus.com', 'PAT005', '1975-01-28', 9);
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, is_allergic) VALUES (5, 'Miranda', 'Lawson', '121 663 215', 'mlawson@cerberus.com', 'PAT005', '1975-01-28', 9, false);
 
 -- Wizyty
 INSERT INTO visit (id, description, time, doctor_id, patient_id) VALUES (1, 'Wizyta_1', '2024-11-15 21:29:31', 7, 2);
@@ -92,32 +92,32 @@ INSERT INTO visit (id, description, time, doctor_id, patient_id) VALUES (14, 'Wi
 INSERT INTO visit (id, description, time, doctor_id, patient_id) VALUES (15, 'Wizyta_15', '2024-09-23 21:29:31', 8, 4);
 
 -- MedicalTreatments
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (1, 'Leczenie_1', 'Operacja', 9);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (1, 'Cesarskie cięcie', 'Operacja', 9);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (2, 'Leczenie_2', 'Konsultacja', 3);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (2, 'Konsultacja', 'Konsultacja', 3);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (3, 'Leczenie_3', 'Diagnoza', 4);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (3, 'Przepisanie maści', 'Diagnoza', 4);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (4, 'Leczenie_4', 'Operacja', 15);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (4, 'Bypass', 'Operacja', 15);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (5, 'Leczenie_5', 'Operacja', 14);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (5, 'Nie wiem co tu wpisać', 'Operacja', 14);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (6, 'Leczenie_6', 'Terapia', 7);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (6, 'Placeholder', 'Terapia', 7);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (7, 'Leczenie_7', 'Terapia', 9);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (7, 'Jak dane testowe to testowe', 'Terapia', 9);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (8, 'Leczenie_8', 'Diagnoza', 4);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (8, 'Kończą mi się pomysły', 'Diagnoza', 4);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (9, 'Leczenie_9', 'Operacja', 5);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (9, 'Caramba Cabron', 'Operacja', 5);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (10, 'Leczenie_10', 'Diagnoza', 1);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (10, '¯\_(ツ)_/¯', 'Diagnoza', 1);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (11, 'Leczenie_11', 'Terapia', 2);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (11, 'Nie naprawdę kończą mi się pomysły', 'Terapia', 2);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (12, 'Leczenie_12', 'Operacja', 13);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (12, '(╯°□°)╯︵ ┻━┻', 'Operacja', 13);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (13, 'Leczenie_13', 'Diagnoza', 5);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (13, '┬─┬ノ( º _ ºノ)', 'Diagnoza', 5);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (14, 'Leczenie_14', 'Konsultacja', 8);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (14, 'Eh...', 'Konsultacja', 8);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (15, 'Leczenie_15', 'Diagnoza', 4);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (15, 'Diagnoza wysypki', 'Diagnoza', 4);
