@@ -100,11 +100,11 @@ INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (3, 'Prze
 
 INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (4, 'Bypass', 'Operacja', 15);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (5, 'Nie wiem co tu wpisać', 'Operacja', 14);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (5, 'Nie wiem co tu wpisać', 'Konsultacja', 14);
 
 INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (6, 'Placeholder', 'Terapia', 7);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (7, 'Jak dane testowe to testowe', 'Terapia', 9);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (7, 'Jak dane testowe to testowe', 'Operacja', 9);
 
 INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (8, 'Kończą mi się pomysły', 'Diagnoza', 4);
 
@@ -112,7 +112,7 @@ INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (9, 'Cara
 
 INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (10, '¯\_(ツ)_/¯', 'Diagnoza', 1);
 
-INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (11, 'Nie naprawdę kończą mi się pomysły', 'Terapia', 2);
+INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (11, 'Nie naprawdę kończą mi się pomysły', 'Diagnoza', 2);
 
 INSERT INTO medical_treatment (id, description, type, visit_id) VALUES (12, '(╯°□°)╯︵ ┻━┻', 'Operacja', 13);
 

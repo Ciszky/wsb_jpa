@@ -39,7 +39,7 @@ public class VisitMapper
                 .map(MedicalTreatmentMapper::mapToTO).collect(Collectors.toList()) : null
         );
 
-        visitTO.setPatientEntity(PatientMapper.mapToTO(visitEntity.getPatient()));
+        visitTO.setPatientEntity(PatientMapper.mapForVisitToTO(visitEntity.getPatient()));
 
         return visitTO;
     }
