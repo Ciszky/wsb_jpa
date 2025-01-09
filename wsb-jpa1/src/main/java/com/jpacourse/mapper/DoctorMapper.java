@@ -2,12 +2,14 @@ package com.jpacourse.mapper;
 
 import com.jpacourse.dto.DoctorTO;
 import com.jpacourse.persistence.entity.DoctorEntity;
-import java.util.stream.Collectors;
 
-public final class DoctorMapper
-{
-    public static DoctorTO mapToTO(final DoctorEntity doctorEntity)
-    {
+public final class DoctorMapper {
+
+    private DoctorMapper() {
+        
+    }
+
+    public static DoctorTO mapToTO(final DoctorEntity doctorEntity) {
         if (doctorEntity == null) {
             return null;
         }
@@ -20,16 +22,13 @@ public final class DoctorMapper
         doctorTO.setFirstName(doctorEntity.getFirstName());
         doctorTO.setLastName(doctorEntity.getLastName());
         doctorTO.setSpecialization(doctorEntity.getSpecialization());
-
         return doctorTO;
     }
 
-    public static DoctorEntity mapToEntity(final DoctorTO doctorTO)
-    {
+    public static DoctorEntity mapToEntity(final DoctorTO doctorTO) {
         if (doctorTO == null) {
             return null;
         }
-
         final DoctorEntity doctorEntity = new DoctorEntity();
         doctorEntity.setDoctorNumber(doctorTO.getDoctorNumber());
         doctorEntity.setAddress(AddressMapper.mapToEntity(doctorTO.getAddress()));

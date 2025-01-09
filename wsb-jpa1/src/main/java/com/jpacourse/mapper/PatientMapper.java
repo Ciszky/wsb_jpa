@@ -1,14 +1,17 @@
 package com.jpacourse.mapper;
 
+import java.util.stream.Collectors;
+
 import com.jpacourse.dto.PatientTO;
 import com.jpacourse.persistence.entity.PatientEntity;
 
-import java.util.stream.Collectors;
+public final class PatientMapper {
 
-public final class PatientMapper
-{
-    public static PatientTO mapToTO(final PatientEntity patientEntity)
-    {
+    private PatientMapper() {
+
+    }
+
+    public static PatientTO mapToTO(final PatientEntity patientEntity) {
         if (patientEntity == null) {
             return null;
         }
@@ -29,16 +32,14 @@ public final class PatientMapper
         }
 
         if (patientEntity.getVisits() != null) {
-            patientTO.setVisits(patientEntity.getVisits() != null ? patientEntity.getVisits().stream()
-                    .map(VisitMapper::mapForPatientToTO).collect(Collectors.toList()) : null
-            );
+            patientTO.setVisits(patientEntity.getVisits().stream()
+                    .map(VisitMapper::mapForPatientToTO).collect(Collectors.toList()));
         }
 
         return patientTO;
     }
 
-    public static PatientTO mapForVisitToTO(final PatientEntity patientEntity)
-    {
+    public static PatientTO mapForVisitToTO(final PatientEntity patientEntity) {
         if (patientEntity == null) {
             return null;
         }
@@ -61,8 +62,7 @@ public final class PatientMapper
         return patientTO;
     }
 
-    public static PatientEntity mapToEntity(final PatientTO patientTO)
-    {
+    public static PatientEntity mapToEntity(final PatientTO patientTO) {
         if (patientTO == null) {
             return null;
         }
@@ -83,9 +83,8 @@ public final class PatientMapper
         }
 
         if (patientTO.getVisits() != null) {
-            patientEntity.setVisits(patientTO.getVisits() != null ? patientTO.getVisits().stream()
-                    .map(VisitMapper::mapForPatientToEntity).collect(Collectors.toList()) : null
-            );
+            patientEntity.setVisits(patientTO.getVisits().stream()
+                    .map(VisitMapper::mapForPatientToEntity).collect(Collectors.toList()));
         }
 
         return patientEntity;

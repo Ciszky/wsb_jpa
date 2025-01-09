@@ -4,8 +4,12 @@ import com.jpacourse.dto.MedicalTreatmentTO;
 import com.jpacourse.persistence.entity.MedicalTreatmentEntity;
 import com.jpacourse.persistence.enums.TreatmentType;
 
-public final class MedicalTreatmentMapper
-{
+public final class MedicalTreatmentMapper {
+
+    private MedicalTreatmentMapper() {
+        // Private constructor to prevent instantiation
+    }
+
     public static MedicalTreatmentTO mapToTO(final MedicalTreatmentEntity medicalTreatmentEntity) {
         if (medicalTreatmentEntity == null) {
             return null;

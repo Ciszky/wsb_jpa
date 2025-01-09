@@ -1,13 +1,16 @@
 package com.jpacourse.mapper;
 
-import com.jpacourse.dto.VisitTO;
-import com.jpacourse.persistence.entity.DoctorEntity;
-import com.jpacourse.persistence.entity.VisitEntity;
-
 import java.util.stream.Collectors;
 
-public class VisitMapper
-{
+import com.jpacourse.dto.VisitTO;
+import com.jpacourse.persistence.entity.VisitEntity;
+
+public final class VisitMapper {
+
+    private VisitMapper() {
+        
+    }
+
     public static VisitTO mapForPatientToTO(final VisitEntity visitEntity) {
         if (visitEntity == null) {
             return null;
@@ -19,8 +22,7 @@ public class VisitMapper
         visitTO.setDoctor(DoctorMapper.mapToTO(visitEntity.getDoctor()));
         visitTO.setTime(visitEntity.getTime());
         visitTO.setTreatments(visitEntity.getMedicalTreatments() != null ? visitEntity.getMedicalTreatments().stream()
-                .map(MedicalTreatmentMapper::mapToTO).collect(Collectors.toList()) : null
-        );
+                .map(MedicalTreatmentMapper::mapToTO).collect(Collectors.toList()) : null);
 
         return visitTO;
     }
@@ -36,8 +38,7 @@ public class VisitMapper
         visitTO.setDoctor(DoctorMapper.mapToTO(visitEntity.getDoctor()));
         visitTO.setTime(visitEntity.getTime());
         visitTO.setTreatments(visitEntity.getMedicalTreatments() != null ? visitEntity.getMedicalTreatments().stream()
-                .map(MedicalTreatmentMapper::mapToTO).collect(Collectors.toList()) : null
-        );
+                .map(MedicalTreatmentMapper::mapToTO).collect(Collectors.toList()) : null);
 
         visitTO.setPatientEntity(PatientMapper.mapForVisitToTO(visitEntity.getPatient()));
 
@@ -55,8 +56,7 @@ public class VisitMapper
         visitEntity.setDoctor(DoctorMapper.mapToEntity(visitTO.getDoctor()));
         visitEntity.setTime(visitTO.getTime());
         visitEntity.setMedicalTreatments(visitTO.getTreatments() != null ? visitTO.getTreatments().stream()
-                .map(MedicalTreatmentMapper::mapToEntity).collect(Collectors.toList()) : null
-        );
+                .map(MedicalTreatmentMapper::mapToEntity).collect(Collectors.toList()) : null);
 
         return visitEntity;
     }
@@ -72,8 +72,7 @@ public class VisitMapper
         visitEntity.setDoctor(DoctorMapper.mapToEntity(visitTO.getDoctor()));
         visitEntity.setTime(visitTO.getTime());
         visitEntity.setMedicalTreatments(visitTO.getTreatments() != null ? visitTO.getTreatments().stream()
-                .map(MedicalTreatmentMapper::mapToEntity).collect(Collectors.toList()) : null
-        );
+                .map(MedicalTreatmentMapper::mapToEntity).collect(Collectors.toList()) : null);
 
         visitEntity.setPatient(PatientMapper.mapToEntity(visitTO.getPatientEntity()));
 
